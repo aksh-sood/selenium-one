@@ -18,9 +18,9 @@ def convert_to_excel(name,date,director,link):
     df.to_csv("moviesdata.csv")
 
 def send_email():
-    sender="akshsood0@gmail.com"
-    password="MANJU._.ATUl1"
-    reciever="nanda.grow10x@gmail.com"
+    sender="" #add your email id here
+    password="" #add your password here
+    reciever="" #add recievers id here
     msg=MIMEMultipart()
     msg["From"]=sender
     msg["To"]=reciever
