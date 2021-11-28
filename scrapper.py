@@ -18,9 +18,9 @@ def convert_to_excel(name,date,director,link):
     df.to_csv("moviesdata.csv")
 
 def send_email():
-    sender="" #add your email id here
-    password="" #add your password here
-    reciever="" #add recievers id here
+    sender="akshsood0@gmail.com"
+    password="MANJU._.ATUl1"
+    reciever="nanda.grow10x@gmail.com"
     msg=MIMEMultipart()
     msg["From"]=sender
     msg["To"]=reciever
@@ -105,6 +105,12 @@ while len(movies_name)<50:
 
 release_date_list,director_list=get_details(driver,movies_links)
 driver.quit()
-
-convert_to_excel(movies_name,release_date_list,director_list,movies_links)
+o=[]
+for x in director_list:
+    name=""
+    for y in x:
+        f=y.split(" ")
+        name=name+f[0]+" "+f[1]+","
+    o.append(name[:-1])
+convert_to_excel(movies_name,release_date_list,o,movies_links)
 send_email()
